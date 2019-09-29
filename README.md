@@ -10,20 +10,20 @@
 - belongs_to :group
 - belongs_to :user
 
-## messagesテーブル
+## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|body|text|null: false|
+|body|text| |
 |image|string| |
 
 ### Association
 - belongs_to :group
 - belongs_to :user
 
-## usersテーブル
+## userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -34,14 +34,15 @@
 ### Association
 - has_many :groups, through: :groups_users
 - has_many :messages
+- has_many :groups_users
 
-## groupsテーブル
+## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_name|text|null: false|
+|name|text|null: false|
 
 ### Association
 - has_many :users, through: :groups_users
 - has_many :messages
+- has_many :groups_users
