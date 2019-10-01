@@ -1,0 +1,109 @@
+.main-header{
+  color: $blk;
+  box-sizing: border-box;
+  margin: 0;
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #eee;
+  overflow: scroll;
+    &__edit-btn{
+      color: $color-notice;
+      box-sizing: border-box;
+      margin: 0;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 28px;
+      border: solid 1px $color-notice;
+      position: absolute;
+      right: 40px;
+    }
+    &__left-box{
+      margin-top: 35px;
+
+      &__current-group{
+        box-sizing: border-box;
+        @include m0p0;
+        font-weight: normal;
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      &__member-list{
+        box-sizing: border-box;
+        @include m0p0;
+        list-style: none;
+        display: flex;
+        font-size: 12px;
+        color: $color-menber;
+        &__member{
+          list-style: none;
+          font-size: 12px;
+          color: $color-menber;
+          box-sizing: border-box;
+          @include m0p0;
+        }
+      }
+    }
+}
+.chat-side{
+  box-sizing: border-box;
+  @include m0p0;
+  width: 300px;
+  color: $color-sidefont;
+  float: left;
+}
+.side-header{
+  color: $color-sidefont;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #253141;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  &__box{
+    color: $color-sidefont;
+    box-sizing: border-box;
+    @include m0p0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    &__user-name{
+      color: $color-sidefont;
+      font-weight: bold;
+      box-sizing: border-box;
+      @include m0p0;
+    }
+    &__menu{
+      color: $color-sidefont;
+      font-weight: bold;
+      box-sizing: border-box;
+      @include m0p0;
+      list-style: none;
+      display: flex;
+      position: relative;
+      z-index: 2;
+      &__new-group{
+        color: $color-sidefont;
+        font-weight: bold;
+        list-style: none;
+        box-sizing: border-box;
+        @include m0p0;
+        margin-left: 0.3rem;
+      }
+      &__edit-user{
+        color: $color-sidefont;
+        font-weight: bold;
+        list-style: none;
+        box-sizing: border-box;
+        @include m0p0;
+        margin-left: 0.3rem;
+      }
+    }
+  }
+}

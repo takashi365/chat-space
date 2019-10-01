@@ -1,0 +1,33 @@
+.chat-main{
+  position: relative;
+}
+.groups{
+  color: $color-sidefont;
+  box-sizing: border-box;
+  margin: 0;
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 20px 20px 0;
+  overflow: scroll;
+}
+.group{
+  color: $color-sidefont;
+  box-sizing: border-box;
+  @include m0p0;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  &__group-name{
+    color: $color-sidefont;
+    box-sizing: border-box;
+    @include m0p0;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  &__latest-message{
+    color: $color-sidefont;
+    box-sizing: border-box;
+    @include m0p0;
+    font-size: 11px;
+  }
+}
