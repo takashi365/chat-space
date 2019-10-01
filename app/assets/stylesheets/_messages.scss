@@ -1,0 +1,42 @@
+.messages{
+  color: $blk;
+  box-sizing: border-box;
+  margin: 0;
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  background-color: #fafafa;
+  overflow: scroll;}
+.message{
+  color: $blk;
+  box-sizing: border-box;
+  @include m0p0;
+  padding-bottom: 40px;
+  &__text{
+    box-sizing: border-box;
+    @include m0p0;
+    color: $color-mainchat;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  &__upper-info{
+    color: $blk;
+    box-sizing: border-box;
+    @include m0p0;
+    display: flex;
+    margin-bottom: 10px;
+    &__talker{
+      box-sizing: border-box;
+      @include m0p0;
+      color: $color-mainchat;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__date{
+      box-sizing: border-box;
+      @include m0p0;
+      color: $color-menber;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
+}
