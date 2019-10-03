@@ -11,8 +11,13 @@ a{
     text-decoration: none;
     position: relative;
 }
-@import "notice";
+@import "modules/user";
+@import "config/colors";
+@import "modules/flash";
+.wrapper{
+  color: $blk;
+}
 @import "header";
 @import "group";
 @import "messages";
-@import "form-btn"
+@import "form-btn";
