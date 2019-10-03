@@ -11,8 +11,9 @@ a{
     text-decoration: none;
     position: relative;
 }
+@import "modules/user";
 @import "notice";
 @import "header";
 @import "group";
 @import "messages";
-@import "form-btn"
+@import "form-btn";
