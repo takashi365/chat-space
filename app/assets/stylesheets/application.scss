@@ -12,7 +12,11 @@ a{
     position: relative;
 }
 @import "modules/user";
-@import "notice";
+@import "config/colors";
+@import "modules/flash";
+.wrapper{
+  color: $blk;
+}
 @import "header";
 @import "group";
 @import "messages";
