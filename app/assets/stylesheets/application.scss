@@ -14,10 +14,12 @@ a{
 @import "modules/user";
 @import "config/colors";
 @import "modules/flash";
+@import "modules/group";
 .wrapper{
   color: $blk;
 }
 @import "header";
+@import "side";
 @import "group";
 @import "messages";
 @import "form-btn";
