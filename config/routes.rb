@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/edit'
-
   devise_for :users
   root to: "groups#index"
   resources :users, only:[:edit, :update]
