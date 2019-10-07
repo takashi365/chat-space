@@ -1,8 +1,7 @@
 $(function(){
   function buildHTML(message){
-    console.log(message);
-    var content = message.content ? '${message.content}' : "";
-    var img = message.image ? '<img src= ${message.image}>' : "";
+   var content = message.content ? `${message.content}` : "";
+    var img = message.image ? `<img src="${message.image}">` : "";
     var html = `<div class="message" data-id="${message.id}">
                   <div class="message__upper-info">
                     <p class="message__upper-info__talker">
@@ -13,9 +12,9 @@ $(function(){
                     </p>
                   </div>
                   <p class="message__text">
-                    <div>
+                    <p class="lower-message__content">
                     ${content}
-                    </div>
+                    </p>
                     ${img}
                   </p>
                 </div>`
@@ -34,22 +33,17 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      $('#new_message')[0].reset();
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('#message_content').val('');
-      $('#new_message')[0].reset();
-    })
-    .done(function scrollBottom(){
-      var target = $('.message').last();
-      var position = target.offset().top + $('.messages').scrollTop();
       $('.messages').animate({
-        scrollTop: position
+        scrollTop: $('.messages')[0].scrollHeight
       }, 300, "swing");
     })
     .fail(function(){
       alert('エラーが発生したためメッセージは送信できませんでした。');
     })
-    .always(function(data){
+    .always(function(){
       $('.form__submit').prop('disabled', false);
     })
   })
