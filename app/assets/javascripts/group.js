@@ -1,5 +1,6 @@
 $(function() {
   var search_list = $("#user-search-result");
+  var add_list = $("#user-add-list");
 
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
@@ -24,6 +25,7 @@ $(function() {
       data: { name: input },
       dataType: 'json'
     })
+
     .done(function(users) {
       $("#user-search-result").empty();
       if (users.length !== 0) {
@@ -37,6 +39,10 @@ $(function() {
     })
     .fail(function(){
       alert('ユーザー検索に失敗しました');
+    })
+
+    $("#user-search-result").on("click",function(){
+      console.log("123");
     })
   });
 });
