@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
    var content = message.content ? `${message.content}` : "";
     var img = message.image ? `<img src="${message.image}">` : "";
-    var html = `<div class="message" data-id="${message.id}">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message__upper-info">
                     <p class="message__upper-info__talker">
                       ${message.user_name}
@@ -47,4 +47,30 @@ $(function(){
       $('.form__submit').prop('disabled', false);
     })
   })
+  var reloadMessages = function() {
+    last_message_id = $(".message:last").data("message-id");
+    $.ajax({
+      url: 'api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      messages.forEach(function(message){
+      var html = buildHTML(message);
+      $('.messages').append(html);
+      $('.messages').animate({
+      scrollTop: $('.messages')[0].scrollHeight
+      }, 300, "swing");
+    })
+  })
+    .fail(function() {
+      alert('エラーが発生したためメッセージは更新できませんでした。');;
+    });
+  };
+  $(window).on("load", function(){
+    if(document.URL.match("messages")){
+      setInterval(reloadMessages, 5000);
+    }
+  });
 });
